@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import AddProduct from "../components/AddProduct";
 import UpdateProduct from "../components/UpdateProdcut"; 
 import AuthContext from "../AuthContext";
-import './pages.css'; // Import CSS file
+import './invent.css';
 
 function Inventory() {
   const [showProductModal, setShowProductModal] = useState(false);

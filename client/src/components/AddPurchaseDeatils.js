@@ -156,7 +156,7 @@ export default function AddPurchaseDetails({
                         Add
                       </button>
                       <button
-                        type="button"
+                        type="P-button"
                         className="custom-btn custom-btn-secondary"
                         onClick={() => addSaleModalSetting()}
                         ref={cancelButtonRef}

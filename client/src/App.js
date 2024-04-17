@@ -6,7 +6,6 @@ import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Inventory from "./pages/Inventory";
-import NoPageFound from "./pages/NoPageFound";
 import AuthContext from './AuthContext';
 import ProtectedWrapper from "./ProtectedWrapper";
 import { useEffect, useState } from "react";
@@ -77,7 +76,7 @@ const App = () => {
             <Route path="/sales" element={<Sales />} />
             <Route path="/manage-store" element={<Store />} />
           </Route>
-          <Route path="*" element={<NoPageFound />} />
+         
         </Routes>
       </BrowserRouter>
     </AuthContext.Provider>

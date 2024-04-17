@@ -6,13 +6,13 @@ const productController = require("../controller/product");
 router.use(express.json());
 
 // Add Product
-router.post("/api/product/add", productController.addProduct);
+router.post("/add", productController.addProduct);
 
 // Get All Products by User ID
-router.get("/api/product/get/:userId", productController.getAllProducts);
+router.get("/get/:userId", productController.getAllProducts);
 
 // Delete Selected Product Item
-router.delete("/api/product/delete/:id", productController.deleteSelectedProduct);
+router.delete("/delete/:id", productController.deleteSelectedProduct);
 
 // Update Selected Product
 router.put("/api/product/update/:id", productController.updateSelectedProduct);

@@ -1,7 +1,7 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/24/outline";
-import "./compo.css"; 
+import "./sale.css"; 
 
 export default function AddSale({
   addSaleModalSetting,

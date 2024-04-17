@@ -13,8 +13,8 @@ export default function ProductAdd({
     userId: authContext.user,
     name: "",
     manufacturer: "",
-    quantity: 0, // Add default quantity value
-    price: 0, // Add default price value
+    quantity: "",
+    price: "",
     description: "",
   });
   const [open, setOpen] = useState(true);

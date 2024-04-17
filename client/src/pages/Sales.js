@@ -77,9 +77,7 @@ function Sales() {
             <div className="flex gap-4">
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 text-xs  rounded"
-                onClick={addSaleModalSetting}
-              >
-                {/* <Link to="/inventory/add-product">Add Product</Link> */}
+                onClick={addSaleModalSetting}>
                 Add Sales
               </button>
             </div>

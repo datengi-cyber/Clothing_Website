@@ -35,9 +35,10 @@ export default function Header() {
                 </span>
               </div>
               <div className="actions-container">
-                <button type="button" className="notification-btn">
-                  <BellIcon />
-                </button>
+              <button type="button" className="notification-btn">
+    <img src="./assets/noti.png" alt="Notification" />
+</button>
+
 
                 <Menu as="div" className="profile-dropdown">
                   <Menu.Button className="profile-btn">
