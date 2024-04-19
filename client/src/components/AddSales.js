@@ -48,7 +48,7 @@ export default function AddSale({
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
-        className="dialogContainer"
+        className="customDialogContainer"
         initialFocus={cancelButtonRef}
         onClose={setOpen}
       >
@@ -61,19 +61,14 @@ export default function AddSale({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="dialogOverlay" />
+          <div className="customDialogOverlay" />
         </Transition.Child>
-
-        <div className="dialogContainer">
-          <div className="dialogPanel">
+  
+        <div className="customDialogContainer">
+          <div className="customDialogPanel">
             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <div className="sm:flex sm:items-start">
-                <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
-                  <PlusIcon
-                    className="h-6 w-6 text-blue-400"
-                    aria-hidden="true"
-                  />
-                </div>
+               
                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left ">
                   <Dialog.Title
                     as="h3"
@@ -92,7 +87,7 @@ export default function AddSale({
                         </label>
                         <select
                           id="productID"
-                          className="inputStyle"
+                          className="customInputStyle"
                           name="productID"
                           onChange={(e) =>
                             handleInputChange(e.target.name, e.target.value)
@@ -123,11 +118,11 @@ export default function AddSale({
                           onChange={(e) =>
                             handleInputChange(e.target.name, e.target.value)
                           }
-                          className="inputStyle"
+                          className="customInputStyle"
                           placeholder="0 - 999"
                         />
                       </div>
-
+  
                       <div>
                         <label
                           htmlFor="storeID"
@@ -137,7 +132,7 @@ export default function AddSale({
                         </label>
                         <select
                           id="storeID"
-                          className="inputStyle"
+                          className="customInputStyle"
                           name="storeID"
                           onChange={(e) =>
                             handleInputChange(e.target.name, e.target.value)
@@ -168,7 +163,7 @@ export default function AddSale({
                           onChange={(e) =>
                             handleInputChange(e.target.name, e.target.value)
                           }
-                          className="inputStyle"
+                          className="customInputStyle"
                           placeholder="$299"
                         />
                       </div>
@@ -180,7 +175,7 @@ export default function AddSale({
                           Sales Date
                         </label>
                         <input
-                          className="inputStyle"
+                          className="customInputStyle"
                           type="date"
                           id="saleDate"
                           name="saleDate"
@@ -194,14 +189,14 @@ export default function AddSale({
                     <div className="flex items-center space-x-4">
                       <button
                         type="button"
-                        className="btnPrimary"
+                        className="customBtnPrimary"
                         onClick={addSale}
                       >
                         Add Sale
                       </button>
                       <button
                         type="button"
-                        className="btnSecondary"
+                        className="customBtnSecondary"
                         onClick={() => addSaleModalSetting()}
                         ref={cancelButtonRef}
                       >
@@ -217,4 +212,5 @@ export default function AddSale({
       </Dialog>
     </Transition.Root>
   );
+  
 }

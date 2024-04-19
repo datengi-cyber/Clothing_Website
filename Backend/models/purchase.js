@@ -19,15 +19,16 @@ const PurchaseSchema = new mongoose.Schema(
             type: Number,
             required:true,
         },
+        TotalPurchaseAmount: {
+            type : Number,
+            required: true,
+        },
         PurchaseDate: {
             type: String,
             required: true,
 
         },
-        TotalPurchaseAmount: {
-            type : Number,
-            required: true,
-        },
+      
     },
     {
         timestamps: true

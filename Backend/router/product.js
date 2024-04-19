@@ -15,7 +15,7 @@ router.get("/get/:userId", productController.getAllProducts);
 router.delete("/delete/:id", productController.deleteSelectedProduct);
 
 // Update Selected Product
-router.put("/api/product/update/:id", productController.updateSelectedProduct);
+router.put("/product/update/:id", productController.updateSelectedProduct);
 
 // Search Product
 router.get("/api/product/search", productController.searchProduct);

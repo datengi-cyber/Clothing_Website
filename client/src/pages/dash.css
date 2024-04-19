@@ -13,7 +13,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
-    background-color: rgb(232, 197, 197);
+    background-color: rgb(137, 128, 128);
 }
 
 /* Dashboard Cards */

@@ -7,20 +7,22 @@ const addPurchase = (req, res) => {
     userID: req.body.userID,
     ProductID: req.body.productID,
     QuantityPurchased: req.body.quantityPurchased,
-    PurchaseDate: req.body.purchaseDate,
     TotalPurchaseAmount: req.body.totalPurchaseAmount,
+    PurchaseDate: req.body.purchaseDate,
   });
 
   addPurchaseDetails
     .save()
     .then((result) => {
       purchaseStock(req.body.productID, req.body.quantityPurchased);
-      res.status(200).send(result);
+      res.status(200).send(result); // Successfully saved
     })
     .catch((err) => {
-      res.status(402).send(err);
+      console.error("Error adding purchase details:", err);
+      res.status(500).send({ error: "Internal Server Error" }); // Changed status code to 500
     });
 };
+
 
 // Get All Purchase Data
 const getPurchaseData = async (req, res) => {

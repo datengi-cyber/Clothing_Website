@@ -248,8 +248,6 @@ a {
 
 /* for purchse  */
 
-/* PurchaseDetails.css */
-
 /* General layout styles for the container */
 .col-span-12.lg\:col-span-10.flex.justify-center {
   padding-top: 20px; /* Adding some padding at the top for better spacing */
@@ -281,12 +279,12 @@ a {
 /* Table styles */
 table.min-w-full {
   width: 100%; /* Ensures the table takes up all available width */
-  background-color: #fff; /* White background for the table */
+  background-color: #9a9393; /* White background for the table */
 }
 
 /* Header cells */
 th.whitespace-nowrap.px-4.py-2.text-left.font-medium.text-gray-900 {
-  background-color: #f7fafc; /* Light background for header to distinguish */
+  background-color: #718491; /* Light background for header to distinguish */
   text-transform: uppercase; /* Capitalize all header texts */
   letter-spacing: 0.05em; /* Spacing out letters slightly */
 }

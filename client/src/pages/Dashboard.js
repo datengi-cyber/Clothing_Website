@@ -8,25 +8,30 @@ import "./dash.css";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const doughnutData = {
-  labels: ["Tshirt", "coat", "jacket", "foodwear"],
+  labels: ["Tshirt", "coat", "jacket", "footwear", "pants"],
   datasets: [
     {
       label: '# of Votes',
-      data: [12, 19, 3,4,6],
+      data: [12, 19, 3, 4, 6],
       backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)'
+        'rgba(105, 99, 132, 1.8)', 
+        'rgba(40, 122, 235, 1.8)',  
+        'rgba(205, 106, 86, 1.8)',  
+        'rgba(25, 102, 186, 1.8)',  
+        'rgba(35, 106, 86, 1.8)'    
       ],
       borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)'
+        'rgba(105, 99, 132, 1)',
+        'rgba(40, 122, 235, 1)',
+        'rgba(205, 106, 86, 1)',
+        'rgba(25, 102, 186, 1)',
+        'rgba(35, 106, 86, 1)'
       ],
-      borderWidth: 1
+      borderWidth: 2
     }
   ]
 };
+
 
 function Dashboard() {
   const [saleAmount, setSaleAmount] = useState("");
@@ -128,7 +133,7 @@ function Dashboard() {
       <div className="dashboard-grid">
         <article className="dashboard-card">
           <div className="card-indicator green">
-            <svg xmlns="http://www.w3.org/2000/svg" className="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">?
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
             </svg>
             <span className="small-text">0%</span>

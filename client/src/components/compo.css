@@ -125,7 +125,7 @@
 
 /* for header */
 .header {
-  background-color: #466a47;
+  background-color: #090a09;
   color: white;
   padding: 30px 40px;
 }
@@ -144,10 +144,11 @@
   
 }
 .logo-header{
-  width: 70px;
-  background-color: #312d2d;
+  width: 80px;
+  background-color: #656363;
+  color: wheat;
   height: auto;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 .site-title {

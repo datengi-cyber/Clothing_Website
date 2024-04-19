@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import AddPurchaseDetails from "../components/AddPurchaseDeatils";
 import AuthContext from "../AuthContext";
+import "./pages.css";
 
 function PurchaseDetails() {
   const [showPurchaseModal, setPurchaseModal] = useState(false);

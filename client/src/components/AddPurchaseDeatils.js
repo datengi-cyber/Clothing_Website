@@ -1,9 +1,10 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { PlusIcon } from "@heroicons/react/24/outline";
-import "./addPurchase.css"; 
+import AuthContext from "../AuthContext";
+import "./addPurchase.css";
 
-export default function AddPurchaseDetails({
+export default function PurchaseDetailsForm({
   addSaleModalSetting,
   products,
   handlePageUpdate,
@@ -19,14 +20,12 @@ export default function AddPurchaseDetails({
   const [open, setOpen] = useState(true);
   const cancelButtonRef = useRef(null);
 
-  console.log("PPu: ", purchase);
+  // console.log("PPu: ", purchase);
 
-  // Handling Input Change for input fields
   const handleInputChange = (key, value) => {
     setPurchase({ ...purchase, [key]: value });
   };
 
-  // POST Data
   const addSale = () => {
     fetch("http://localhost:4000/api/purchase/add", {
       method: "POST",
@@ -44,11 +43,10 @@ export default function AddPurchaseDetails({
   };
 
   return (
-    // Modal
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
-        className="dialogContainer"
+        className="purchase-dialog"
         initialFocus={cancelButtonRef}
         onClose={setOpen}
       >
@@ -61,37 +59,37 @@ export default function AddPurchaseDetails({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="dialogOverlay" />
+          <div className="overlay" />
         </Transition.Child>
 
-        <div className="dialogContainer">
-          <div className="dialogPanel">
-            <div className="bg-white custom-panel">
-              <div className="custom-flex">
-                <div className="custom-icon">
-                  <PlusIcon className="custom-plus-icon" aria-hidden="true" />
-                </div>
-                <div className="custom-text">
-                  <Dialog.Title className="custom-title">
-                    Purchase Details
-                  </Dialog.Title>
-                  <form action="#">
-                    <div className="custom-grid">
-                      <div>
-                        <label className="custom-label" htmlFor="productID">
-                          Product Name
-                        </label>
+        <div className="dialog-content">
+          <div className="dialog-inner">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              enterTo="opacity-100 translate-y-0 sm:scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            >
+              <div className="dialog-panel">
+                <div className="panel-content">
+                  <div className="panel-header">
+                    <h3 className="panel-title">Purchase Details</h3>
+                  </div>
+                  <form>
+                    <div className="form-grid">
+                      <div className="form-field">
+                        <label htmlFor="productID">Product Name</label>
                         <select
                           id="productID"
-                          className="custom-select"
                           name="productID"
                           onChange={(e) =>
                             handleInputChange(e.target.name, e.target.value)
                           }
                         >
-                          <option value="" disabled selected>
-                            Select Products
-                          </option>
+                          <option value="">Select Products</option>
                           {products.map((element, index) => (
                             <option key={element._id} value={element._id}>
                               {element.name}
@@ -99,10 +97,8 @@ export default function AddPurchaseDetails({
                           ))}
                         </select>
                       </div>
-                      <div>
-                        <label className="custom-label" htmlFor="quantityPurchased">
-                          Quantity Purchased
-                        </label>
+                      <div className="form-field">
+                        <label htmlFor="quantityPurchased">Quantity Purchased</label>
                         <input
                           type="number"
                           name="quantityPurchased"
@@ -111,14 +107,11 @@ export default function AddPurchaseDetails({
                           onChange={(e) =>
                             handleInputChange(e.target.name, e.target.value)
                           }
-                          className="custom-input"
                           placeholder="0 - 999"
                         />
                       </div>
-                      <div>
-                        <label className="custom-label" htmlFor="totalPurchaseAmount">
-                          Total Purchase Amount
-                        </label>
+                      <div className="form-field">
+                        <label htmlFor="totalPurchaseAmount">Total Purchase Amount</label>
                         <input
                           type="number"
                           name="totalPurchaseAmount"
@@ -127,16 +120,12 @@ export default function AddPurchaseDetails({
                           onChange={(e) =>
                             handleInputChange(e.target.name, e.target.value)
                           }
-                          className="custom-input"
                           placeholder="$299"
                         />
                       </div>
-                      <div>
-                        <label className="custom-label" htmlFor="purchaseDate">
-                          Purchase Date
-                        </label>
+                      <div className="form-field">
+                        <label htmlFor="purchaseDate">Purchase Date</label>
                         <input
-                          className="custom-input"
                           type="date"
                           id="purchaseDate"
                           name="purchaseDate"
@@ -147,17 +136,10 @@ export default function AddPurchaseDetails({
                         />
                       </div>
                     </div>
-                    <div className="custom-buttons">
+                    <div className="form-actions">
+                      <button type="button" onClick={addSale}>Add</button>
                       <button
                         type="button"
-                        className="custom-btn custom-btn-primary"
-                        onClick={addSale}
-                      >
-                        Add
-                      </button>
-                      <button
-                        type="P-button"
-                        className="custom-btn custom-btn-secondary"
                         onClick={() => addSaleModalSetting()}
                         ref={cancelButtonRef}
                       >
@@ -167,7 +149,7 @@ export default function AddPurchaseDetails({
                   </form>
                 </div>
               </div>
-            </div>
+            </Transition.Child>
           </div>
         </div>
       </Dialog>

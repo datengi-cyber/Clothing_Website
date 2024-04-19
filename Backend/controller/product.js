@@ -1,5 +1,4 @@
 
-
 const Product = require("../models/product");
 const Purchase = require("../models/purchase");
 const Sales = require("../models/sales");
@@ -13,7 +12,6 @@ const addProduct = (req, res) => {
     manufacturer: req.body.manufacturer,
     quantity: req.body.quantity,
     price: req.body.price,
-    
     description: req.body.description,
   });
   
